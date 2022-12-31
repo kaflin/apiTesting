@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import entities.User;
 import org.apache.http.Header;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.util.Arrays;
@@ -48,5 +49,13 @@ public class ResponseUtils {
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false)
                 .readValue(jsonBody,userClass);
     }
+    public static <T> T unmarshellGeneric(CloseableHttpResponse response, Class<T> userClass) throws IOException {
+        String jsonBody = EntityUtils.toString(response.getEntity());
+        return new ObjectMapper()
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false)
+                .readValue(jsonBody,userClass);
+    }
+
 
 }
+// Class<T> :- It is java Generic
