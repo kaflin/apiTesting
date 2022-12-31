@@ -11,20 +11,6 @@ import java.io.IOException;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get200 extends BaseClass{
-    CloseableHttpClient client;
-    CloseableHttpResponse response;
-
-    @BeforeMethod
-    public void setup(){
-        client=HttpClientBuilder.create().build();
-    }
-
-    @AfterMethod
-    public void closeResources() throws IOException,NullPointerException {
-        client.close();
-        response.close();
-    }
-
     @Test
     public void baseUrlReturns200() throws IOException {
        HttpGet get = new HttpGet(BASE_ENDPOINT);

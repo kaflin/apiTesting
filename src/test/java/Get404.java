@@ -12,20 +12,6 @@ import java.io.IOException;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Get404 extends BaseClass{
-    CloseableHttpClient client;
-    CloseableHttpResponse response;
-
-    @BeforeMethod
-    public void setup(){
-        client= HttpClientBuilder.create().build();
-    }
-
-    @AfterMethod
-    public void closeResources() throws IOException,NullPointerException {
-        client.close();
-        response.close();
-    }
-
     @Test
     public void nonExistingUrlReturns404() throws IOException {
         HttpGet get = new HttpGet(BASE_ENDPOINT + "/nonexistingurl");
