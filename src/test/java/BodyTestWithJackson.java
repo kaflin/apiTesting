@@ -1,4 +1,5 @@
 import entities.NotFound;
+import entities.RateLimit;
 import entities.User;
 import org.apache.http.client.methods.HttpGet;
 import org.testng.Assert;
@@ -27,5 +28,13 @@ public class BodyTestWithJackson extends BaseClass {
         response =client.execute(get);
         NotFound notFound=ResponseUtils.unmarshellGeneric(response, NotFound.class);
         Assert.assertEquals(notFound.getMessage(),"Not Found");
+    }
+    @Test
+    public void correctRateLimitsAreSet() throws IOException{
+        HttpGet get = new HttpGet(BASE_ENDPOINT+"/rate_limit");
+        response =client.execute(get);
+        RateLimit rateLimit =ResponseUtils.unmarshellGeneric(response, RateLimit.class);
+        Assert.assertEquals(rateLimit.getCoreLimit(),60);
+        Assert.assertEquals(rateLimit.getSearchLimit(),"10");
     }
 }
