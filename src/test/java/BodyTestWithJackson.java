@@ -30,7 +30,7 @@ public class BodyTestWithJackson extends BaseClass {
         Assert.assertEquals(notFound.getMessage(),"Not Found");
     }
     @Test
-    public void correctRateLimitsAreSet() throws IOException{
+    public void correctRateLimitsAreSet() throws IOException{  //Unmarshell of nested json entity
         HttpGet get = new HttpGet(BASE_ENDPOINT+"/rate_limit");
         response =client.execute(get);
         RateLimit rateLimit =ResponseUtils.unmarshellGeneric(response, RateLimit.class);
