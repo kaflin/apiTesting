@@ -14,7 +14,7 @@ public class Get200 extends BaseClass{
     @Test
     public void baseUrlReturns200() throws IOException {
        HttpGet get = new HttpGet(BASE_ENDPOINT);
-      response=client.execute(get);
+       response=client.execute(get);
        int actualStatus = response.getStatusLine().getStatusCode();
        assertEquals(actualStatus,200);
     }
