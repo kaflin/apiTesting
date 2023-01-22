@@ -6,19 +6,27 @@ import org.apache.http.entity.StringEntity;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class DeleteAndPost extends BaseClass{
+    //Define Json to post
+    String json = "{\"name\": \"deleteRepo1\"}";
+    StringEntity entity =new StringEntity(json);
 
-    @Test
+    public DeleteAndPost() throws UnsupportedEncodingException {
+    }
+
+
+    @Test(priority = 2)
     public void deleteIsSuccessful() throws IOException{
-        HttpDelete request = new HttpDelete("https://api.github.com/repos/kaflin/deleteRepo1");
+        HttpDelete request = new HttpDelete("https://api.github.com/repos/kaflin/"+entity);
         request.setHeader(HttpHeaders.AUTHORIZATION,"Token " +TokenStore.TOKEN_KEY);
         response=client.execute(request);
         int actualStatusCode =response.getStatusLine().getStatusCode();
         Assert.assertEquals(actualStatusCode,204);
     }
 
-    @Test(description = "This test will work if you set valid Email+password in TokenStore Class")
+    @Test(description = "This test will work if you set valid Email+password in TokenStore Class",priority = 1)
     public void createRepoReturns201() throws IOException {
 
         //Define Json to post

@@ -1,0 +1,23 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="postmanApiTesting">
+    <listeners>
+        <listener class-name="utilities.Reporting"/>
+    </listeners>
+    <test name ="Github API  Test">
+            <classes>
+                <class name="Get200"/>
+                <class name="Get401"/>
+                <class name="Get404"/>
+                <class name="BodyTestWithSimpleMap"/>
+                <class name="BodyTestWithJackson"/>
+                <class name="Options204"/>
+                <class name="DeleteAndPost"/>
+
+<!--                <class name="testCases.TC_NavBarElement_001"/>-->
+
+            </classes>
+    </test>
+</suite>
