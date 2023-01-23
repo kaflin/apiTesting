@@ -9,9 +9,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 public class DeleteAndPost extends BaseClass{
-    //Define Json to post
-    String json = "{\"name\": \"deleteRepo1\"}";
-    StringEntity entity =new StringEntity(json);
+
 
     public DeleteAndPost() throws UnsupportedEncodingException {
     }
@@ -19,7 +17,7 @@ public class DeleteAndPost extends BaseClass{
 
     @Test(priority = 2)
     public void deleteIsSuccessful() throws IOException{
-        HttpDelete request = new HttpDelete("https://api.github.com/repos/kaflin/"+entity);
+        HttpDelete request = new HttpDelete("https://api.github.com/repos/kaflin/deleteRepo2");
         request.setHeader(HttpHeaders.AUTHORIZATION,"Token " +TokenStore.TOKEN_KEY);
         response=client.execute(request);
         int actualStatusCode =response.getStatusLine().getStatusCode();
@@ -30,7 +28,7 @@ public class DeleteAndPost extends BaseClass{
     public void createRepoReturns201() throws IOException {
 
         //Define Json to post
-        String json = "{\"name\": \"deleteRepo1\"}";
+        String json = "{\"name\": \"deleteRepo2\"}";
         StringEntity entity =new StringEntity(json);
         // Create an HttpPost with valid Endpoint
 
