@@ -1,9 +1,10 @@
+package utilities;
+
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entities.User;
 import org.apache.http.Header;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.util.Arrays;

@@ -1,3 +1,6 @@
+package testCases;
+
+import base.BaseClass;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;

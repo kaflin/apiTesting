@@ -1,10 +1,7 @@
-import org.apache.http.client.methods.CloseableHttpResponse;
+package testCases;
+
+import base.BaseClass;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,7 +9,7 @@ import java.io.IOException;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Get401 extends BaseClass{
+public class Get401 extends BaseClass {
 
 
 

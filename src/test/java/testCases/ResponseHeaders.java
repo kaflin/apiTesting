@@ -1,12 +1,17 @@
+package testCases;
+
+import base.BaseClass;
 import org.apache.http.Header;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.ContentType;
 import org.testng.annotations.Test;
+import utilities.ResponseUtils;
+
 import java.io.IOException;
 
 import static org.testng.Assert.assertEquals;
 
-public class ResponseHeaders extends  BaseClass{
+public class ResponseHeaders extends BaseClass {
 
     //HTTP GET
 //1. Test for status Codes

@@ -1,3 +1,6 @@
+package testCases;
+
+import base.BaseClass;
 import entities.TokenStore;
 import org.apache.http.HttpHeaders;
 import org.apache.http.client.methods.HttpDelete;
@@ -8,7 +11,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-public class DeleteAndPost extends BaseClass{
+public class DeleteAndPost extends BaseClass {
 
 
     public DeleteAndPost() throws UnsupportedEncodingException {

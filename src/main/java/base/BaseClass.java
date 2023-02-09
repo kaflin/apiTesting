@@ -1,3 +1,5 @@
+package base;
+
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -9,8 +11,8 @@ import java.io.IOException;
 public class BaseClass {
     protected static final String BASE_ENDPOINT = "https://api.github.com";
 
-    CloseableHttpClient client;
-    CloseableHttpResponse response;
+    public CloseableHttpClient client;
+    public CloseableHttpResponse response;
 
     @BeforeMethod
     public void setup(){

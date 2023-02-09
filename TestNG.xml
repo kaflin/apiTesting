@@ -8,13 +8,13 @@
     </listeners>
     <test name ="Github API  Test">
             <classes>
-                <class name="Get200"/>
-                <class name="Get401"/>
-                <class name="Get404"/>
-                <class name="BodyTestWithSimpleMap"/>
-                <class name="BodyTestWithJackson"/>
-                <class name="Options204"/>
-                <class name="DeleteAndPost"/>
+                <class name="testCases.Get200"/>
+                <class name="testCases.Get401"/>
+                <class name="testCases.Get404"/>
+                <class name="testCases.BodyTestWithSimpleMap"/>
+                <class name="testCases.BodyTestWithJackson"/>
+                <class name="testCases.Options204"/>
+                <class name="testCases.DeleteAndPost"/>
 
 <!--                <class name="testCases.TC_NavBarElement_001"/>-->
 
