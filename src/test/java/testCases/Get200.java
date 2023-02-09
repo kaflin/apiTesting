@@ -29,5 +29,12 @@ public class Get200 extends BaseClass {
         int actualStatus = response.getStatusLine().getStatusCode();
         assertEquals(actualStatus,200);
     }
+    @Test(priority = 4)
+    public void publicGistsUrlReturns200() throws IOException {
+        HttpGet get = new HttpGet(BASE_ENDPOINT+"/gists/public");
+        response = client.execute(get);
+        int actualStatus = response.getStatusLine().getStatusCode();
+        assertEquals(actualStatus,200);
+    }
 
 }
