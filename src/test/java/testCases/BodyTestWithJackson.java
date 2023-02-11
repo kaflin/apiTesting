@@ -48,5 +48,6 @@ public class BodyTestWithJackson extends BaseClass {
         response =client.execute(get);
         Gists gists =ResponseUtils.unmarshellGeneric(response, Gists.class);
         Assert.assertEquals(gists.getDescription(),"tic tac toe");
+        Assert.assertEquals(gists.getFileName(),"tic-tac");
     }
 }
