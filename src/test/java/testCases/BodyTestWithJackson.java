@@ -1,6 +1,7 @@
 package testCases;
 
 import base.BaseClass;
+import entities.Gists;
 import entities.NotFound;
 import entities.RateLimit;
 import entities.User;
@@ -40,5 +41,12 @@ public class BodyTestWithJackson extends BaseClass {
         RateLimit rateLimit =ResponseUtils.unmarshellGeneric(response, RateLimit.class);
         Assert.assertEquals(rateLimit.getCoreLimit(),60);
         Assert.assertEquals(rateLimit.getSearchLimit(),"10");
+    }
+    @Test
+    public void gistsDescriptionForParticularId() throws IOException{
+        HttpGet get = new HttpGet(BASE_ENDPOINT+"/gists/ceced31fac6b9f1100803820dc804cc7");
+        response =client.execute(get);
+        Gists gists =ResponseUtils.unmarshellGeneric(response, Gists.class);
+        Assert.assertEquals(gists.getDescription(),"tic tac toe");
     }
 }
